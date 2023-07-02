@@ -1,6 +1,6 @@
 /*
 SQLyog Ultimate v13.1.1 (64 bit)
-MySQL - 10.3.16-MariaDB : Database - webapi
+MySQL - 10.3.16-MariaDB : Database - restapi
 *********************************************************************
 */
 
@@ -43,7 +43,7 @@ CREATE TABLE `product` (
   `price` double(12,2) NOT NULL COMMENT 'Price',
   `image` varchar(150) NOT NULL COMMENT 'Image',
   PRIMARY KEY (`id`,`product`,`sku`,`price`,`image`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4;
 
 /*Data for the table `product` */
 
@@ -55,7 +55,11 @@ insert  into `product`(`id`,`product`,`sku`,`price`,`image`) values
 (5,'Etiam eget augue dapibus','IUIH',5343.00,'5.jpg'),
 (6,'Nullam suscipit erat diam','IOIUIO',8786.00,'6.jpg'),
 (7,'Mauris sed facilisis orci','OIUOIU',7657.00,'7.jpg'),
-(8,'Donec lobortis egestas quam','9JH99',5554.00,'8.jpg');
+(8,'Donec lobortis egestas quam','9JH99',5554.00,'8.jpg'),
+(9,'Test','TEST',123.00,''),
+(10,'Test','TEST',123.00,''),
+(11,'Test','TEST',123.00,''),
+(12,'Test','TEST',123.00,'test.png');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
