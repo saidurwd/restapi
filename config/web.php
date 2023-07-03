@@ -14,6 +14,16 @@ $config = [
         '@npm'   => '@vendor/npm-asset',
     ],
     'components' => [
+        'response' => [
+            'formatters' => [
+                \yii\web\Response::FORMAT_JSON => [
+                    'class' => 'yii\web\JsonResponseFormatter',
+                    'prettyPrint' => YII_DEBUG, // use "pretty" output in debug mode
+                    'keepObjectType' => true, // keep object type for zero-indexed objects
+                ],
+                'charset' => 'UTF-8',
+            ],
+        ],
         'request' => [
             'parsers' => [
                 'application/json' => 'yii\web\JsonParser',
@@ -55,12 +65,8 @@ $config = [
             //            'enableStrictParsing' => true,
             //            'suffix' => '.html',
             'rules' => array(
-                '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
-                '<controller:\w+>/<id:\d+>' => '<controller>/view',
-                '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
-                '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
-                ['class' => 'yii\rest\UrlRule', 'controller' => 'Product'],
-                ['class' => 'yii\rest\UrlRule', 'controller' => 'Cart'],
+                ['class' => 'yii\rest\UrlRule', 'controller' => 'product'],
+                ['class' => 'yii\rest\UrlRule', 'controller' => 'cart'],
             ),
         ],
     ],
